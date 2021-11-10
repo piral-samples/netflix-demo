@@ -1,0 +1,100 @@
+.ListToggle {
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  border-radius: 32px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  opacity: 0;
+}
+.ListToggle:hover {
+  border: 2px solid #ffffff;
+}
+.ListToggle:hover div {
+  //top: -32px;
+}
+.ListToggle[data-toggled='true'] {
+  background: #e50914;
+  border: 2px solid #e50914;
+}
+.ListToggle[data-toggled='true'] div {
+  top: -32px;
+}
+.ListToggle div {
+  position: absolute;
+  margin-left: -2px;
+  margin-top: -1px;
+  top: 0;
+  left: 0;
+  height: 64px;
+  width: 32px;
+  -webkit-transition: 0.125s ease;
+  transition: 0.125s ease;
+}
+.ListToggle div i {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 32px;
+  width: 32px;
+}
+
+.FavoriteToggleFull {
+  overflow: hidden;
+}
+
+.FavoriteToggleFull[data-toggled='true'] {
+  background: #e50914;
+  border: 2px solid #e50914;
+}
+.FavoriteToggleFull[data-toggled='true'] div {
+  top: -15px;
+}
+.FavoriteToggleFull div {
+  position: relative;
+  margin-left: -10px;
+  margin-top: -1px;
+  top: 17px;
+  left: 0;
+  height: 64px;
+  width: 32px;
+  -webkit-transition: 0.125s ease;
+  transition: 0.125s ease;
+}
+.FavoriteToggleFull div i {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  width: 32px;
+}
+
+.Favorites {
+  margin: 10rem 5rem 0 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: baseline;
+  & > * {
+    width: 12.5%;
+    &:nth-child(3n) {
+      width: 25%;
+    }
+  }
+}

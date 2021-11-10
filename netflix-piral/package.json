@@ -1,0 +1,39 @@
+{
+  "name": "netflix-piral",
+  "version": "1.2.3",
+  "description": "",
+  "keywords": [
+    "piral"
+  ],
+  "dependencies": {
+    "copy-webpack-plugin": "^6.2.1",
+    "piral": "0.14.0"
+  },
+  "scripts": {
+    "start": "piral debug",
+    "build": "piral build"
+  },
+  "app": "./src/index.html",
+  "pilets": {
+    "files": [],
+    "externals": [],
+    "scripts": {},
+    "validators": {},
+    "devDependencies": {},
+    "preScaffold": "",
+    "postScaffold": "",
+    "preUpgrade": "",
+    "postUpgrade": "",
+    "packageOverrides": {}
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@types/react-router": "latest",
+    "@types/react-router-dom": "latest",
+    "piral-cli": "next",
+    "piral-cli-webpack5": "next",
+    "typescript": "latest"
+  }
+}

@@ -15,8 +15,10 @@ jobs:
         with:
           node-version: "14.x"
           registry-url: "https://registry.npmjs.org"
-      - name: Install Yarn
-        run: npm install -g yarn
+      - name: Install Yarn and gh-pages
+        run: |
+          npm install -g yarn
+          npm install -g gh-pages
       - name: Install Dependencies
         run: |
           cd netflix-piral
@@ -30,6 +32,6 @@ jobs:
       - name: Deploy Website
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          npx gh-pages -d netflix-piral/dist/release -u "github-actions-bot <support+actions@github.com>"
+          gh-pages -d "netflix-piral/dist/release" -u "github-actions-bot <support+actions@github.com>"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

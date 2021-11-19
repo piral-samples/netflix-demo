@@ -28,6 +28,7 @@ jobs:
         run: |
           cd netflix-piral
           npx piral build --type release
+          cp dist/release/index.html dist/release/404.html
           cd ..
       - name: Deploy Website
         run: |

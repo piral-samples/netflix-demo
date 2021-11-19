@@ -1,0 +1,35 @@
+name: Publish Demo
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14.x"
+          registry-url: "https://registry.npmjs.org"
+      - name: Install Yarn
+        run: npm install -g yarn
+      - name: Install Dependencies
+        run: |
+          cd netflix-piral
+          npm i
+          cd ..
+      - name: Build Website
+        run: |
+          cd netflix-piral
+          npx piral build --type release
+          cd ..
+      - name: Deploy Website
+        run: |
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          npx gh-pages -d netflix-piral/dist/release -u "github-actions-bot <support+actions@github.com>"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

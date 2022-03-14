@@ -3,7 +3,6 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b392f8ac-0ec3-44e8-bf19-1bfda4a7dfbd/deploy-status)](https://app.netlify.com/sites/netflix-piral/deploys)
 [![](https://img.shields.io/website?color=2b7489&style=flat-square&up_message=netflix.deruwe.me&url=https%3A%2F%2Fnetflix.deruwe.me)](https://netflix.deruwe.me)
 
-
 <p>
     <span>A Netflix clone using</span>
     <span>
@@ -31,12 +30,11 @@
 
 [![](https://i.imgur.com/J63Qkfy.jpg)](https://netflix-piral.deruwe.me)
 
+## Application Overview
 
-## Application overview
+You can find the application online on [netflix.deruwe.me](https://netflix.deruwe.me).
 
-You can find the application online on [netflix.deruwe.me](https://netflix.deruwe.me). 
-
-This application is a Netflix clone with some basic functionalities. There is a `Browse` page where the user can discover showcases of trending series and movies, top rated ones, etc. 
+This application is a Netflix clone with some basic functionalities. There is a `Browse` page where the user can discover showcases of trending series and movies, top rated ones, etc.
 
 Of course, to find a specific movie or series, the user can also use the provided `Search` bar.
 
@@ -52,8 +50,10 @@ The user can switch accounts via the `Profile` option in the top right. All favo
 <img src="https://media.giphy.com/media/rOa1PlSAnA4hgHV7z3/giphy.gif"/>
 
 ## Microfrontends
-This project consists of multiple microfrondends (in the Piral framework called "Pilets"). You can find the code for them here:
 
+This project consists of multiple microfrondends (in the Piral framework called "pilets").
+
+You can find the code for them here:
 
 [![Browse pilet](https://github-readme-stats.vercel.app/api/pin/?username=dantederuwe&repo=netflix-browse-pilet&theme=dark&icon_color=2B7489)](https://github.com/dantederuwe/netflix-browse-pilet)
 [![Profile pilet](https://github-readme-stats.vercel.app/api/pin/?username=dantederuwe&repo=netflix-profile-pilet&theme=dark&icon_color=2B7489)](https://github.com/dantederuwe/netflix-profile-pilet)

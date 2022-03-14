@@ -1,5 +1,5 @@
 import * as React from "react";
-import { PiletApi } from "netflix-piral";
+import { PiletApi } from "@smapiot/netflix-piral-demo";
 import { MovieTile } from "./components/MovieTile";
 import { ToggleProps } from "./models/proptypes";
 import "./style.scss";

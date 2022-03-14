@@ -1,8 +1,8 @@
 import * as React from "react";
-import { Player } from "./Player";
 import { useParams } from "react-router-dom";
+import { Player } from "./Player";
 
-const WatchPage: React.FC<any> = () => {
+const WatchPage: React.FC = () => {
   const params: any = useParams();
 
   return (

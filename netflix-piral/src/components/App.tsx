@@ -1,5 +1,6 @@
 import * as React from "react";
-import { ExtensionSlot, LayoutProps, Menu } from "piral";
+import { ExtensionSlot, LayoutProps } from "piral-core";
+import { Menu } from "piral-menu";
 import Logo from "./Logo";
 import Footer from "./Footer";
 

@@ -1,26 +1,19 @@
 import * as React from "react";
 import { Redirect } from "react-router-dom";
-import { ComponentsState, ErrorComponentsState } from "piral";
-import Navigation from "./components/Navigation";
+import { ComponentsState, ErrorComponentsState } from "piral-core";
 import App from "./components/App";
-import { Link } from "react-router-dom";
+import Navigation from "./components/Navigation";
+import Loading from "./components/Loading";
+
+export const home: React.FC = () => <Redirect to="/browse" />;
 
 export const layout: Partial<ComponentsState> = {
   Layout: App,
   MenuContainer: Navigation,
+  LoadingIndicator: Loading,
   MenuItem: ({ children }) => <li>{children}</li>,
-  DashboardContainer: () => <Redirect to="/browse" />,
 };
 
 export const errors: Partial<ErrorComponentsState> = {
-  not_found: () => (
-    <div>
-      <p className="error">
-        Could not find the requested page. Are you sure it exists?
-      </p>
-      <p>
-        Go back <Link to="/">to the homepage</Link>.
-      </p>
-    </div>
-  ),
+  not_found: () => <div />,
 };

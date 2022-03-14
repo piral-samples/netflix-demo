@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  build_app:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,16 +24,138 @@ jobs:
           cd netflix-piral
           npm i
           cd ..
-      - name: Build Website
+      - name: Build App Shell
         run: |
           cd netflix-piral
-          npx piral build --type release
+          npx piral build
           echo "netflix.samples.piral.cloud" > dist/release/CNAME
           cp dist/release/index.html dist/release/404.html
           cd ..
-      - name: Deploy Website
+      - name: Publish Emulator
+        run: |
+          cd netflix-piral
+          npm publish dist/emulator/*.tgz
+          cd ..
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+      - name: Deploy App Shell
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
           gh-pages -d "netflix-piral/dist/release" -u "github-actions-bot <support+actions@github.com>"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  build_browse:
+    runs-on: ubuntu-latest
+    needs: build_app
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14.x"
+          registry-url: "https://registry.npmjs.org"
+      - name: Install Dependencies
+        run: |
+          cd netflix-browse-pilet
+          npm i
+          cd ..
+      - name: Publish Pilet
+        run: |
+          cd netflix-browse-pilet
+          npx pilet publish --fresh --api-key ${PIRAL_FEED_TOKEN} --url https://feed.piral.cloud/api/v1/pilet/netflix-demo
+        env:
+          PIRAL_FEED_TOKEN: ${{ secrets.PIRAL_FEED_TOKEN }}
+
+  build_favorites:
+    runs-on: ubuntu-latest
+    needs: build_app
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14.x"
+          registry-url: "https://registry.npmjs.org"
+      - name: Install Dependencies
+        run: |
+          cd netflix-favorites-pilet
+          npm i
+          cd ..
+      - name: Publish Pilet
+        run: |
+          cd netflix-favorites-pilet
+          npx pilet publish --fresh --api-key ${PIRAL_FEED_TOKEN} --url https://feed.piral.cloud/api/v1/pilet/netflix-demo
+        env:
+          PIRAL_FEED_TOKEN: ${{ secrets.PIRAL_FEED_TOKEN }}
+
+  build_profile:
+    runs-on: ubuntu-latest
+    needs: build_app
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14.x"
+          registry-url: "https://registry.npmjs.org"
+      - name: Install Dependencies
+        run: |
+          cd netflix-profile-pilet
+          npm i
+          cd ..
+      - name: Publish Pilet
+        run: |
+          cd netflix-profile-pilet
+          npx pilet publish --fresh --api-key ${PIRAL_FEED_TOKEN} --url https://feed.piral.cloud/api/v1/pilet/netflix-demo
+        env:
+          PIRAL_FEED_TOKEN: ${{ secrets.PIRAL_FEED_TOKEN }}
+
+  build_search:
+    runs-on: ubuntu-latest
+    needs: build_app
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14.x"
+          registry-url: "https://registry.npmjs.org"
+      - name: Install Dependencies
+        run: |
+          cd netflix-search-pilet
+          npm i
+          cd ..
+      - name: Publish Pilet
+        run: |
+          cd netflix-search-pilet
+          npx pilet publish --fresh --api-key ${PIRAL_FEED_TOKEN} --url https://feed.piral.cloud/api/v1/pilet/netflix-demo
+        env:
+          PIRAL_FEED_TOKEN: ${{ secrets.PIRAL_FEED_TOKEN }}
+
+  build_watch:
+    runs-on: ubuntu-latest
+    needs: build_app
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14.x"
+          registry-url: "https://registry.npmjs.org"
+      - name: Install Dependencies
+        run: |
+          cd netflix-watch-pilet
+          npm i
+          cd ..
+      - name: Publish Pilet
+        run: |
+          cd netflix-watch-pilet
+          npx pilet publish --fresh --api-key ${PIRAL_FEED_TOKEN} --url https://feed.piral.cloud/api/v1/pilet/netflix-demo
+        env:
+          PIRAL_FEED_TOKEN: ${{ secrets.PIRAL_FEED_TOKEN }}

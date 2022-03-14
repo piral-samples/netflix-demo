@@ -1,15 +1,23 @@
-import "piral/polyfills";
-import { renderInstance } from "piral";
-import { layout, errors } from "./layout";
+import * as React from "react";
+import { render } from "react-dom";
+import { createInstance, Piral } from "piral-core";
+import { createMenuApi } from "piral-menu";
+import { home, layout, errors } from "./layout";
 
-const feedUrl = "https://feed.piral.cloud/api/v1/pilet/dante-feed";
-
-renderInstance({
-  layout,
-  errors,
+const instance = createInstance({
+  state: {
+    components: layout,
+    errorComponents: errors,
+    routes: {
+      '/': home,
+    },
+  },
+  plugins: [createMenuApi()],
   requestPilets() {
-    return fetch(feedUrl)
+    return fetch("https://feed.piral.cloud/api/v1/pilet/netflix-demo")
       .then((res) => res.json())
       .then((res) => res.items);
   },
 });
+
+render(<Piral instance={instance} />, document.querySelector("#app"));

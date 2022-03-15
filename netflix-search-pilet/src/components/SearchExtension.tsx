@@ -1,8 +1,8 @@
 import * as React from "react";
 import useDismiss from "../hooks/useDismiss";
-import { SearchExtensionProps } from "../models/proptypes";
 import { Search } from "./Search";
 import { SearchResults } from "./SearchResults";
+import { SearchExtensionProps } from "../models/proptypes";
 
 export const SearchExtension: React.FC<SearchExtensionProps> = ({
   MovieTile,
@@ -13,10 +13,10 @@ export const SearchExtension: React.FC<SearchExtensionProps> = ({
 
   useDismiss(() => setResultsVisible(false), wrapperRef);
 
-  const performSearch = (url: string) => {
+  const performSearch = React.useCallback((url: string) => {
     setSearchUrl(url);
     setResultsVisible(!!url);
-  };
+  }, []);
 
   return (
     <div ref={wrapperRef} className="SearchContainer">

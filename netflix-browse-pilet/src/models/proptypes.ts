@@ -1,8 +1,9 @@
+import { FC } from "react";
 import { HeroData, ShowCaseData } from "./types";
 
 export interface BrowseProps {
-  FavoritesButton: React.FC<FavoritesButtonProps>;
-  MovieTile: React.FC<MovieTileProps>;
+  FavoritesButton: FC<FavoritesButtonProps>;
+  MovieTile: FC<MovieTileProps>;
 }
 
 export interface FavoritesButtonProps {
@@ -12,11 +13,11 @@ export interface FavoritesButtonProps {
 }
 
 export interface ShowCaseProps extends ShowCaseData {
-  MovieTile: React.FC<MovieTileProps>;
+  MovieTile: FC<MovieTileProps>;
 }
 
 export interface HeroProps extends HeroData {
-  FavoritesButton: React.FC<FavoritesButtonProps>;
+  FavoritesButton: FC<FavoritesButtonProps>;
 }
 
 export interface MovieTileProps {

@@ -1,21 +1,23 @@
+import { FC } from "react";
+
 export interface SearchProps {
-    onSearchChange: Function;
+  onSearchChange(url: string): void;
 }
 
 export interface SearchResultsProps {
-    searchUrl: string;
-    MovieTile: React.FC<MovieTileProps>;
+  searchUrl: string;
+  MovieTile: FC<MovieTileProps>;
 }
 
 export interface SearchExtensionProps {
-    MovieTile: React.FC<MovieTileProps>;
+  MovieTile: FC<MovieTileProps>;
 }
 
 export interface MovieTileProps {
-    backdrop: string;
-    title: string;
-    score: string;
-    overview: string;
-    movieId: string;
-    media_type: 'tv' | 'movie';
+  backdrop: string;
+  title: string;
+  score: string;
+  overview: string;
+  movieId: string;
+  media_type: "tv" | "movie";
 }

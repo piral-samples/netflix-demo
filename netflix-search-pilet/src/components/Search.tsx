@@ -1,8 +1,7 @@
 import * as React from "react";
+import { apiKey } from "./constants";
 import { SearchProps } from "../models/proptypes";
 import { debounce } from "../utils/debounce";
-
-const apiKey = "87dfa1c669eea853da609d4968d294be";
 
 export const Search: React.FC<SearchProps> = (props) => {
   const [searchTerm, setSearchTerm] = React.useState("");
@@ -21,8 +20,7 @@ export const Search: React.FC<SearchProps> = (props) => {
 
   const handleSearch = React.useCallback(
     debounce((value) => {
-      var searchUrl = "search/multi?query=" + value + "&api_key=" + apiKey;
-      props.onSearchChange(searchUrl);
+      props.onSearchChange(`search/multi?query=${value}&api_key=${apiKey}`);
     }, 500),
     []
   );

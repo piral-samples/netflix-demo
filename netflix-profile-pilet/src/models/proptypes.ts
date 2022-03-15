@@ -7,5 +7,5 @@ export interface ProfileExtensionProps {
 
 export interface AccountProps {
   user: User;
-  onClickName: Function;
+  onClickName(): void;
 }

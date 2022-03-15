@@ -1,9 +1,10 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import { PiletApi } from "@smapiot/netflix-piral-demo";
-import { Browse } from "./components/Browse";
 import { MovieTileProps } from "./models/proptypes";
 import "./style.scss";
+
+const Browse = React.lazy(() => import("./components/Browse"));
 
 export function setup(app: PiletApi) {
   const MovieTile: React.FC<MovieTileProps> = (props) => (

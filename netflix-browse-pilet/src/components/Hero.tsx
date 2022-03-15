@@ -10,7 +10,7 @@ export const Hero: React.FC<HeroProps> = (props) => {
       style={{ backgroundImage: `url(${props.backgroundUrl})` }}
     >
       <div className="content">
-        <img className="logo" src={props.logoUrl} />
+        <img className="logo" src={props.logoUrl} title="Logo" />
         <h2>{props.title}</h2>
         <p>{props.text}</p>
         <div className="button-wrapper">

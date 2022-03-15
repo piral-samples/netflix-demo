@@ -1,5 +1,5 @@
 export interface ApiData {
-  results?: ApiDataEntry[];
+  results?: Array<ApiDataEntry>;
 }
 
 export interface ApiDataEntry {

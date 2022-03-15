@@ -12,7 +12,11 @@ interface ProfileProps {
 
 export const Profile: React.FC<ProfileProps> = ({ user }) => {
   const avatar = user.avatarId ? avatars[user.avatarId] : avatars[0];
-  const profilepic = user.imageUrl ? <img src={user.imageUrl} /> : avatar;
+  const profilepic = user.imageUrl ? (
+    <img title={user.avatarId} src={user.imageUrl} />
+  ) : (
+    avatar
+  );
 
   return (
     <div className="UserProfile">

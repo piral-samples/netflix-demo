@@ -6,7 +6,7 @@
 
 :zap: This sample demonstrates the use of `piral` to build a dynamic app consisting of various micro frontends.
 
-You can visit this demo at [netflix.samples.piral.cloud/](https://netflix.samples.piral.cloud/).
+You can visit this demo at [netflix-demo.samples.piral.cloud/](https://netflix-demo.samples.piral.cloud/).
 
 ## Getting Started
 

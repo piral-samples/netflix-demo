@@ -6,6 +6,10 @@
 
 :zap: This sample demonstrates the use of `piral` to build a dynamic app consisting of various micro frontends.
 
+Feel free to play around with the code using StackBlitz.
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/piral-samples/netflix-demo)
+
 You can visit this demo at [netflix-demo.samples.piral.cloud/](https://netflix-demo.samples.piral.cloud/).
 
 ## Getting Started

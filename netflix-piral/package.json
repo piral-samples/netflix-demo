@@ -1,13 +1,20 @@
 {
   "name": "@smapiot/netflix-piral-demo",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "The emulator for the netflix-demo app shell.",
   "keywords": [
     "piral"
   ],
+  "importmap": {
+    "imports": {},
+    "inherit": [
+      "piral-base",
+      "piral-core"
+    ]
+  },
   "dependencies": {
-    "piral-core": "0.14.18",
-    "piral-menu": "0.14.18",
+    "piral-core": "0.15.0",
+    "piral-menu": "0.15.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-router": "^5.0.0",
@@ -21,18 +28,6 @@
     "build": "piral build"
   },
   "app": "./src/index.html",
-  "pilets": {
-    "files": [],
-    "externals": [],
-    "scripts": {},
-    "validators": {},
-    "devDependencies": {},
-    "preScaffold": "",
-    "postScaffold": "",
-    "preUpgrade": "",
-    "postUpgrade": "",
-    "packageOverrides": {}
-  },
   "devDependencies": {
     "@types/node": "latest",
     "@types/react": "latest",
@@ -40,8 +35,8 @@
     "@types/react-router": "latest",
     "@types/react-router-dom": "latest",
     "copy-webpack-plugin": "^6.2.1",
-    "piral-cli": "0.14.18",
-    "piral-cli-webpack5": "0.14.18",
+    "piral-cli": "0.15.0",
+    "piral-cli-webpack5": "0.15.0",
     "typescript": "latest"
   }
 }

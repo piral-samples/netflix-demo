@@ -2,8 +2,7 @@ import * as React from "react";
 import createPersistedState from "use-persisted-state";
 import { Account } from "./Account";
 import { User } from "../models/types";
-
-const users = require("../data/users.yml") as Array<User>;
+import users from "../data/users.yml";
 
 const useUserState = createPersistedState("user");
 

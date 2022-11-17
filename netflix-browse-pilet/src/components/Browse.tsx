@@ -1,12 +1,9 @@
 import * as React from "react";
 import { BrowseProps } from "../models/proptypes";
-import { HeroData, ShowCaseData } from "../models/types";
 import { Hero } from "./Hero";
 import { Showcase } from "./Showcase";
-
-// Webpack will load the yml as objects (see webpack config)
-const showcasesdata = require("../data/showcases.yml") as Array<ShowCaseData>;
-const herodata = require("../data/hero.yml") as HeroData;
+import showcasesdata from "../data/showcases.yml";
+import herodata from "../data/hero.yml";
 
 const Browse: React.FC<BrowseProps> = (props) => {
   const showcases = showcasesdata.map((data, i) => (

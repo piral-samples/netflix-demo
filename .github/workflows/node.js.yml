@@ -28,7 +28,7 @@ jobs:
         run: |
           cd netflix-piral
           npx piral build
-          echo "netflix-demo.samples.piral.cloud" > dist/release/CNAME
+          echo "notflix-demo.samples.piral.cloud" > dist/release/CNAME
           cp dist/release/index.html dist/release/404.html
           cd ..
       - name: Publish Emulator

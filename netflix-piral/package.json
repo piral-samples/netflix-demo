@@ -1,6 +1,6 @@
 {
   "name": "@smapiot/netflix-piral-demo",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "The emulator for the netflix-demo app shell.",
   "keywords": [
     "piral"

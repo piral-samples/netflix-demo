@@ -14,7 +14,7 @@ const instance = createInstance({
   },
   plugins: [createMenuApi()],
   requestPilets() {
-    return fetch("https://feed.piral.cloud/api/v1/pilet/netflix-demo")
+    return fetch("https://feed.piral.cloud/api/v1/pilet/notflix-demo")
       .then((res) => res.json())
       .then((res) => res.items);
   },
